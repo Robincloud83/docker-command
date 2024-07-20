@@ -1,0 +1,10 @@
+#pull image of mysql
+docker pull mysql
+#create the volume
+docker volume create --name volume_mysql --opt type=none --opt device=/root/phpmyadmin-app/volume --opt o=bind
+#start conatiner with mysqlrootpasswd
+docker run -d --mount source=volume_mysql,target=/var/lib/mysql/ -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 mysql:latest
+#go inside the docker 
+docker exec -it cd528417035b sh
+#now you are in docker mysql conatiner
+
