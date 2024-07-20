@@ -25,4 +25,4 @@ volumes:
     # Replace with your desired volume name or path on the host machine
 
 #####it start withcommand
-#docker compose up --build 
+#docker compose up --build -d
