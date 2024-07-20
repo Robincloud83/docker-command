@@ -7,4 +7,6 @@ docker run -d --mount source=volume_mysql,target=/var/lib/mysql/ -p 3306:3306 -e
 #go inside the docker 
 docker exec -it cd528417035b sh
 #now you are in docker mysql conatiner
-
+####Now you need to run phpmyadmin conatiner also
+docker run -d --name phpmyadmin   --link mysql_conatainer_name:db   -p 8080:80   -e PMA_HOST=db   -e PMA_PORT=3306   phpmyadmin/phpmyadmin
+###then Hit the URL:Ip:8080 phpmyadmin
